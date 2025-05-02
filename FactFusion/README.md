@@ -1,4 +1,4 @@
-# Research-Focused RAG Pipeline
+# MultiModal AI Based Fact Checking System Using Rag Pipeline
 
 A specialized Retrieval-Augmented Generation (RAG) pipeline designed exclusively for academic research and scholarly verification. This pipeline searches across multiple academic databases to provide comprehensive evidence for research claims and academic fact-checking.
 
