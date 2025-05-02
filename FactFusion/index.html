@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI RAG Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GenAI RAG Interface</h1>
+            <p class="subtitle">Intelligent Document Processing and Fact-Checking System</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Upload File</h2>
+                <div class="input-container">
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="file-upload-container">
+                            <input type="file" id="fileInput" name="file" accept=".mp3,.wav,.mp4,.avi,.txt,.pdf,.jpg,.jpeg,.png,.docx" class="file-input">
+                            <label for="fileInput" class="file-label">
+                                <span class="file-icon">📁</span>
+                                <span class="file-text">Choose a file or drag it here</span>
+                                <span class="file-types">Supported formats: Audio (MP3, WAV), Video (MP4, AVI), Text (TXT, PDF, DOCX), Images (JPG, PNG)</span>
+                            </label>
+                        </div>
+                        <button type="submit" id="submitBtn" class="primary-button">Process File</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2>Results</h2>
+                <div class="output-container">
+                    <div id="loadingIndicator" class="loading-indicator hidden">
+                        <div class="spinner"></div>
+                        <p>Processing your file...</p>
+                    </div>
+                    <div id="fileTypeIndicator" class="file-type-indicator hidden">
+                        <p>Detected file type: <span id="fileType"></span></p>
+                    </div>
+                    <div id="summarySection" class="result-section hidden">
+                        <h3>Summary</h3>
+                        <div id="summaryContent" class="content-box"></div>
+                    </div>
+                    <div id="factCheckSection" class="result-section hidden">
+                        <h3>Fact-Checking Analysis</h3>
+                        <div class="trust-score-container">
+                            <div id="trustScore" class="trust-score"></div>
+                            <div id="confidenceLevel" class="confidence-level"></div>
+                        </div>
+                        <div id="explanation" class="content-box"></div>
+                        <div id="supportingPoints" class="points-container">
+                            <h4>Supporting Evidence</h4>
+                            <ul id="supportingPointsList"></ul>
+                        </div>
+                        <div id="contradictoryPoints" class="points-container">
+                            <h4>Contradictory Evidence</h4>
+                            <ul id="contradictoryPointsList"></ul>
+                        </div>
+                        <div class="raw-evidence-container">
+                            <details>
+                                <summary>View Raw Evidence Sources</summary>
+                                <pre id="rawEvidence" class="raw-evidence"></pre>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by GenAI RAG Pipeline</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
